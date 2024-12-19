@@ -1,0 +1,15 @@
+{
+  "name": "week-4-rest-api-hackathon-laa",
+  "version": "1.0.0",
+  "description": "Feel free to delete this and start from scratch.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
