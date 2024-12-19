@@ -10,9 +10,21 @@ export async function getGames() {
     console.error("Error reading file:", error);
   }
 }
-const gamesObject = getGames()
-let GamesArray = gamesObject.map((data) => ({data}))
+const gamesObject = await getGames()
 
+
+export async function getGameByID(gamesObject, value){
+  return Object.keys(gamesObject).find(key => gamesObject[key] == value);
+
+}
+let example = await getGameByID(gamesObject, "20200")
+console.log (example)
+  // get all the games
+// get all the IDs from the games
+
+
+// search for a specific id
+//return the game with that id
 
 
 

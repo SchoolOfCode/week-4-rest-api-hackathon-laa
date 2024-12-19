@@ -20,8 +20,8 @@ import express from "express";
 const app = express();
 const PORT = 3000;
 
-import { getGames } from "./functions.js";
-import { getGameByName } from "./functions.js";
+import { getGameByID, getGames } from "./functions.js";
+//import { getGameByName } from "./functions.js";
 
 app.use(express.json());
 
@@ -41,10 +41,13 @@ app.get("/games", async function (req, res) {
   console.log("this is / games", JSON.stringify(allGames))
 });
 
-app.get("/games/:id", async function (req, res) {
+app.get("/games/id", async function (req, res) {
+    const GameId = await getGameByID();
+    res.json(GameId)
+
     // respond with the array of quotes
     // this function would: get quotes, respond with them
-    const gamesName = await getGameByName("Galactic Bowling");
-    res.json(gamesName);
-    console.log("this is / games/names", JSON.stringify(gamesName))
+    // const gamesName = await getGameByName("Galactic Bowling");
+    // res.json(gamesName);
+    // console.log("this is / games/names", JSON.stringify(gamesName))
   });
