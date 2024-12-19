@@ -21,6 +21,7 @@ const app = express();
 const PORT = 3000;
 
 import { getGames } from "./functions.js";
+import { getGameByName } from "./functions.js";
 
 app.use(express.json());
 
@@ -35,7 +36,15 @@ app.listen(PORT, function () {
 app.get("/games", async function (req, res) {
   // respond with the array of quotes
   // this function would: get quotes, respond with them
-  const gamesArray = await getGames();
-  res.json(gamesArray);
-  console.log("this is / games", JSON.stringify(gamesArray))
+  const allGames = await getGames();
+  res.json(allGames);
+  console.log("this is / games", JSON.stringify(allGames))
 });
+
+app.get("/games/:id", async function (req, res) {
+    // respond with the array of quotes
+    // this function would: get quotes, respond with them
+    const gamesName = await getGameByName("Galactic Bowling");
+    res.json(gamesName);
+    console.log("this is / games/names", JSON.stringify(gamesName))
+  });
