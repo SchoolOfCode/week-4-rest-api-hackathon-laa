@@ -37,4 +37,5 @@ app.get("/games", async function (req, res) {
   // this function would: get quotes, respond with them
   const gamesArray = await getGames();
   res.json(gamesArray);
+  console.log("this is / games", JSON.stringify(gamesArray))
 });
