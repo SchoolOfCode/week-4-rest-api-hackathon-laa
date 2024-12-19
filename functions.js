@@ -1,4 +1,4 @@
-import games from "./games.json";
+import games from "./games.json" with { type: "json" };
 
 import fs from "node:fs/promises";
 
